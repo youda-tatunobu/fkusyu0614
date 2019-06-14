@@ -12,8 +12,11 @@ namespace fkusyu0614
 {
     public partial class Form1 : Form
     {
+
         int vx = -10;
         int vy = -10;
+
+        Point zpos;
         public Form1()
         {
             
@@ -30,6 +33,13 @@ namespace fkusyu0614
         {
             label1.Left += vx;
             label1.Top += vy;
+
+            zpos = PointToClient(MousePosition);
+
+            label1.Left=zpos.X;
+            label1.Top = zpos.Y;
+
+
 
             if(label1.Left<0)
             {
